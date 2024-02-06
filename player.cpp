@@ -1,18 +1,18 @@
-#include "player.hpp"
-
-Player::Player(string playerName, ECcolor color()) {
+#include "Player.hpp"
+Player::Player(string playerName, ECcolor color):playerName(playerName) , colorVal(color) {
 
 }
 
 ostream& Player::print(ostream& playerOutput) {
     playerOutput << "Player Name: " << playerName << endl;
-    playerOutput << "Player's color: " << color() << endl;
+    playerOutput << "Player's color: " << colorStrings[(int)colorVal] << endl;
     playerOutput << "Player's score: " << score << endl;
-    playerOutput << "The scoreboard: " << scoreboard << endl;
+    playerOutput << "The scoreboard: " << scoreboard[0,1,2] << endl;
+    return playerOutput;
 }
 
-ECcolor Player::color(color()) {
-    return color();
+ECcolor Player::color() {
+      return colorVal;
 }
 
 int Player::getScore() {
@@ -27,7 +27,8 @@ bool Player::wonColumn(int colNum) {
         return true;
     }
     else {
-        cout << "You lost!" << endl;
+
+        cout << "Not Yet!" << endl;
         return false;
     }
 }
