@@ -1,8 +1,9 @@
 #include <iostream>
 #include <fstream>
 #include "dice.hpp"
-#include "player.hpp"
+#include "Player.hpp"
 #include "tools.hpp"
+#include "Enum.hpp"
 
 
 void UnitDice (){
@@ -10,34 +11,36 @@ void UnitDice (){
 
     // Testing all numbers from 1 to 10
     int nDice = rand() % 10 + 1  ;
-    banner();
-    ofstream
-            Diceroll("Diceroll.txt",ios::app);
-
-    /*Output if file can't open*/
+    banner() ;
+    ofstream Diceroll("Diceroll.txt",ios::app);
+    // Testing if open
     if (!Diceroll.is_open()) {
-        fatal ("File Diceroll.txt cannot be opened for writing.");
+        fatal( "Could not open Dice.Txt file");
     }
 
     Dice rolling(nDice);
     Diceroll << "And your rolls are:" << endl;
-    const int* Rollnum = rolling.roll(); //this helps to access the array
-    rolling.print(Diceroll); //calling the print function
-    cout << "And your rolls are:\n" << rolling << endl;
+    const int* Rollnum = rolling.roll();
+    //rolling.print(Diceroll);
     Diceroll << endl;
+    // cout << "Now" << rolling << endl ;
     Diceroll.close();
 }
 
 void UnitPlayer () {
-    Player playerVal (string playerName, ECcolor color());
+    Player playerVal ( "Jeff", ECcolor::green );
+    for (int i=0; i < 3; i++)
+     {
+        cout << playerVal;
+        playerVal.wonColumn(7);
+     }
 
-    for (int i=0; i < 3; i++) {
-        playerVal.wonColumn();
-    }
 }
 
+
 int main() {
-    UnitDice();
-    bye();
-    return 0;
+   // UnitDice();
+   // bye();
+   UnitPlayer();
+   return 0;
 }
