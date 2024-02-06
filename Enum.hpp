@@ -1,12 +1,14 @@
+
 #ifndef ENUMS_H
 #define ENUMS_H
 #include "tools.hpp"
-#include "Enum.hpp"
+
 
 enum class ECcolor {
-    white,orange,yellow,green, blue //,red
-// Red is the Error color
+    white,orange,yellow,green,blue
+    /*,red Red is the Error color */
 };
+const string colorStrings[] = { "white", "orange", "yellow", "green", "blue"/*, "red" */ };
 ECcolor inputColor();
 string colorToString(ECcolor color);
 
