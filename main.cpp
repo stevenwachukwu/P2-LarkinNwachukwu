@@ -30,17 +30,17 @@ void UnitDice (){
 void UnitPlayer () {
     Player playerVal ( "Jeff", ECcolor::green );
     for (int i=0; i < 3; i++)
-     {
+    {
         cout << playerVal;
         playerVal.wonColumn(7);
-     }
+    }
 
 }
 
 
 int main() {
-   // UnitDice();
-   // bye();
-   UnitPlayer();
-   return 0;
+    // UnitDice();
+    // bye();
+    UnitPlayer();
+    return 0;
 }
