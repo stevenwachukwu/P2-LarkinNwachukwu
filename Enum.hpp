@@ -5,10 +5,10 @@
 
 
 enum class ECcolor {
-    white,orange,yellow,green,blue
+    white,orange,yellow,green,blue,red
     /*,red Red is the Error color */
 };
-const string colorStrings[] = { "white", "orange", "yellow", "green", "blue"/*, "red" */ };
+const string colorStrings[] = { "White", "Orange", "Yellow", "Green", "Blue", "Red"};
 ECcolor inputColor();
 string colorToString(ECcolor color);
 
