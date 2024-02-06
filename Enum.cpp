@@ -1,13 +1,13 @@
 #include "Enum.hpp"
-#include <iostream>
 #include "tools.hpp"
+#include <iostream>
 // Define the array of strings for enum output
-const string colorStrings[] = { "white", "orange", "yellow", "green", "blue"/*, "red" */ };
+//const string colorStrings[] = { "white", "orange", "yellow", "green", "blue"/*, "red" */ };
 
 // Function to input ECcolor enum
 ECcolor inputColor() {
     char choice;
-    cout << "Select a color (W/O/Y/G/B): ";
+    cout << "Select a color (White,Orange,Yellow,Green,Blue): ";
     cin >> choice;
     switch (choice) {
         case 'w': case 'W': return ECcolor::white;
