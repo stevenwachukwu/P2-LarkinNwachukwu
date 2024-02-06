@@ -15,13 +15,14 @@ ECcolor inputColor() {
         case 'y': case 'Y': return ECcolor::yellow;
         case 'g': case 'G': return ECcolor::green;
         case 'b': case 'B': return ECcolor::blue;
-        /*case 'r': case 'R': return ECcolor::red; */
+        case 'r': case 'R': return ECcolor::red;
+
         default:
             fatal("Invalid color choice. Defaulting to white.");
             return ECcolor::white;
     }
 }
-    //Function to convert ECcolor enum to string
-     string colorToString(ECcolor color) {
+//Function to convert ECcolor enum to string
+string colorToString(ECcolor color) {
     return colorStrings[static_cast<int>(color)];
 }
